@@ -5,7 +5,8 @@ variable number of parmeters it is possible cause instead of directly running th
  while a function is executed at runtime   */ 
 
  fn main(){
-    let arr = array![[1, 2, 3], [4, 5, 6], [7, 8, 9]]; 
+    let arr1 = array![[1, 2, 3], [4, 5, 6], [7, 8, 9]]; 
+    let arr2 = array![[10, 11, 12], [13, 14, 15], [16, 17, 18]]; 
     //this is how macro is array is expands at compile time 
     /*let m = {
     // 1. Create a flat "chain" of data (the rule of chain!)
@@ -20,16 +21,19 @@ variable number of parmeters it is possible cause instead of directly running th
         .expect("Macro failed to create array: check your brackets!")
 
     };*/
-    let num = 8 
-    println!("{num}"); // this is a new feature in rust 1.58 called "format string capture" it allows us to use the variable name directly in the format string without having to specify it as an argument
-    println!("{}", num);
+    let num = 8 ;
+    println!("scalling factor : {num}"); // this is a new feature in rust 1.58 called "format string capture" it allows us to use the variable name directly in the format string without having to specify it as an argument
     println!("{}", arr); 
     println!("/////////////////////////////////////////////");
     println!("/////////////////////////////////////////////");
     println!("{:?}", arr);  
+
     /* format specifer {}	Display	"Print this for a human user (clean and simple)."
        format specifer {:?}	Debug	"Print this for a developer (detailed and unambiguous)." 
        format specifer {:#?}	Pretty Debug	"Print this for a developer (detailed and pretty)." 
        format specifer {:x} LowerHex print the number as hexa dex */
+
+    let add = &arr1 + &arr2; /* this is how we can add two arrays together this "&" is not similar to cpp  
+
 
  }
