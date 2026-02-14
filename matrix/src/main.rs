@@ -20,6 +20,16 @@ variable number of parmeters it is possible cause instead of directly running th
         .expect("Macro failed to create array: check your brackets!")
 
     };*/
+    let num = 8 
+    println!("{num}"); // this is a new feature in rust 1.58 called "format string capture" it allows us to use the variable name directly in the format string without having to specify it as an argument
+    println!("{}", num);
+    println!("{}", arr); 
+    println!("/////////////////////////////////////////////");
+    println!("/////////////////////////////////////////////");
+    println!("{:?}", arr);  
+    /* format specifer {}	Display	"Print this for a human user (clean and simple)."
+       format specifer {:?}	Debug	"Print this for a developer (detailed and unambiguous)." 
+       format specifer {:#?}	Pretty Debug	"Print this for a developer (detailed and pretty)." 
+       format specifer {:x} LowerHex print the number as hexa dex */
 
-    
  }
