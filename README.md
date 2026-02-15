@@ -1,18 +1,26 @@
 # Rust Programming 
 //genrally there are two ways we can control heap memory 
 1. garbage collector(compiler manages memory auto )
-2.  manually allocate or deallocate memory (has security and bug issues) rust has diffrent approch for managing memory there is part in rust's compiler called borrow checker which implements 2 rules
-i.) ownership ii.) borrowing 
-i--ownership - 1.each value in rust has an owner 
-               2. there can be only owner at a time 
+
+2.  manually allocate or deallocate memory (has security and bug issues) rust has diffrent approch for managing memory there is part in rust's compiler called borrow checker which implements 2 rules:-
+i.) ownership ii.) borrowing
+
+i--ownership :- 
+
+1.each value in rust has an owner 
+
+2. there can be only owner at a time 
+
                   ex - fn main (){
                          let s1 = string::from("hellow !!");
                          let s2 = s1 ;
                          println!("{s1}") //error borrow of s1 has moved to s2 
                          }
                          # If we want to print s1 we either can print s2 or can give s2 = s1.clone() ;}this will give ownership of clone of s1 not of s1  
-                3. when the owner goes out of scope the value will be dropped 
-                //these rules also applies to function parameter passing 
+
+  3. when the owner goes out of scope the value will be dropped 
+  //these rules also applies to function parameter passing
+                
                 ex- fn main (){
                          let s1 = string::from("hellow !!");
                          let s2 = s1 ;
@@ -23,7 +31,9 @@ i--ownership - 1.each value in rust has an owner
                     fn printo(str :: string ){
                       println({"str"});
                       }//from str goes out of scope so value from str is dropped so nor s1 has value neither s2 or str from here on 
-                  #the good practice is to give refrence as a prameter to the fucntion by usage of & operator :-
+                  
+#the good practice is to give refrence as a prameter to the fucntion by usage of & operator :-
+                  
                       fn main (){
                          let s1 = string::from("hellow !!");
                          let s2 = s1 ;
