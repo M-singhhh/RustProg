@@ -1,5 +1,8 @@
 # Rust Programming 
-//genrally there are two ways we can control heap memory 1. garbage collector(compiler manages memory auto ) 2. manually allocate or deallocate memory (has security and bug issues) rust has diffrent approch for managing memory there is part in rust's compiler called borrow checker which implements 2 rules i.) ownership ii.) borrowing 
+//genrally there are two ways we can control heap memory 
+1. garbage collector(compiler manages memory auto )
+2.  manually allocate or deallocate memory (has security and bug issues) rust has diffrent approch for managing memory there is part in rust's compiler called borrow checker which implements 2 rules
+i.) ownership ii.) borrowing 
 i--ownership - 1.each value in rust has an owner 
                2. there can be only owner at a time 
                   ex - fn main (){
