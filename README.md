@@ -41,10 +41,12 @@ i--ownership :-
                          printo(&s2)
                           }
 
-                    fn printo(str :: &string ){ //refrence value is recived is stored to str and str refrenced ownership will drop after scope   
+                    fn printo(str :: &string ){ //refrence value is borrowed by str and str borrowed refrenced ownership will drop after scope   
                       println({"str"});
-                      }
-                  
+                      }//ownership return to original owner from here on 
+#this technique is called borrowing it is similar to real life borrowing when passed a refrence to variable it will temporary borrow value and ownership of value it has 2 rules :-
+
+1.at any given time you can have 1 mutable refrence or any number of immutable refrence 
 
 
 
