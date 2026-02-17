@@ -46,7 +46,35 @@ i--ownership :-
                       }//ownership return to original owner from here on 
 #this technique is called borrowing it is similar to real life borrowing when passed a refrence to variable it will temporary borrow value and ownership of value it has 2 rules :-
 
-1.at any given time you can have 1 mutable refrence or any number of immutable refrence 
+1.at any given time you can have 1 mutable refrence or any number of immutable refrence and at defult any refrence is immutable cause you cant edit and read at same time cause 
+
+B reads score = 10
+A changes score = 50
+B continues calculation assuming 10 //Program bug — called data race and rust frobids it 
+
+  case 1 :
+  
+                    let s1 = string::from("hellow !!");
+                    let r1 = &s1 ; //immutable refrence we can have any number of these 
+ case 2 : 
+ 
+                    let mut s2 = string::from("hellow !!");
+                    let r2 = &s2 ;{reading }
+                    let r3 = &mut s2 ; {editing}  // Compiler says NO. Because: Someone is reading while someone might modify. 
+case 3 :
+
+                    let mut x = 5;
+                    let r1 = &mut x;
+                    let r2 = &mut x; // two people cant edit at the same time thats why only one mutable refrence 
+case 4 : 
+
+                    let mut x = 5;
+                    {
+                    let r1 = &x;
+                    println!("{}", r1);
+                    } // r1 dies here
+                    let r2 = &mut x; this is totally alowed cause reader died because of it is out of scope now therfore we can use x again as a mutable refrence 
+
 
 
 
