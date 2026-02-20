@@ -33,5 +33,5 @@ fn main() {
         dig_num = dig_num / 10 ;
     }
 
-    for
+    
 }
