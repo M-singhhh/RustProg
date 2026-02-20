@@ -3,7 +3,7 @@ use std::io;
 fn main() {
     let mut num = 0 ;
     let mut nums = Vec::new();
-    nums.push(1);
+    nums.push(1);//atleast one element is required to so vector type can be inferred, otherwise we have to specify the type of vector like Vec<i32> or Vec<String> etc.
     //infinite loop //printing odd int in range 0 to 100 
     
     let loop_var = loop {
