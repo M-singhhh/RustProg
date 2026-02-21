@@ -1,15 +1,31 @@
 use std::io;
 
 fn main() {
-    let mut nums = vec![0];
+    let mut nums = Vec::new();
+    nums.push(5);
 
-    for i in 0..5{
-        nums.push(i);
+
+    let mut input = String::new();
+
+    // for i in 0..{
+    //     nums.push(i);
+    // }
+    let mut input = String::new();
+    for line in io::stdin().lines(){
+        let line = match line {
+            Ok(l) => l,
+            Err(_) => break, // Exit loop on IO error
+        };
+        match line.trim().parse::<i32>() {
+            Ok(number) => {
+                nums.push(number);
+            }
+
     }
     
-    let mut input = String::new();
-    io::stdin().read_line(&mut input ) .expect("failed");
-    let number : i32 = input.trim().parse().unwrap(); 
-    nums.push(number);
+    
+    
+    
     println!("{:?}", nums);
+}
 }
