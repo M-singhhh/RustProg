@@ -74,11 +74,7 @@ case 4 :
                     println!("{}", r1);
                     } // r1 dies here
                     let r2 = &mut x; this is totally alowed cause reader died because of it is out of scope now therfore we can use x again as a mutable refrence 
-
-
-
-
-
+                    
                   
 //Python is Dynamically Linked. When you run a script, it doesn't "own" the math logic; it just asks the Python Interpreter (already installed on your OS) to do it.
 Rust is Statically Linked by default. It pulls the entire LLVM backend, your ndarray dependency, and the std library into a single Self-Contained Executable.
